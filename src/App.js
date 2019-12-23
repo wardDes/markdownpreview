@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react';
+import View from './View'
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-        This works now!
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+          <View />
+      </div>
+    )
+  }
 }
+
 
 export default App;
