@@ -1,1 +1,16 @@
 
+#editor {
+    border: 2px solid red;
+    margin: 0 auto;
+    min-height: 250px;
+    min-width: 620px;
+    max-width: 680px;
+    font-size: 12px;
+}
+
+#preview {
+    border: 2px solid blue;
+    max-width: 680px;
+    margin: 0 auto;
+    height: 780px;
+}
