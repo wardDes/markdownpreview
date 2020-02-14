@@ -90,8 +90,8 @@ export class View extends Component {
         el.classList.toggle("maximized")
         el3.classList.toggle("editorMaxH")
         this.state.icon === "arrows-alt" ?
-        this.setState({...state, icon: "compress-arrows-alt"}) :
-        this.setState({...state, icon: "arrows-alt"})
+            this.setState({...state, icon: "compress-arrows-alt"}) :
+            this.setState({...state, icon: "arrows-alt"})
     }
 
     handleClickPrev(state){
@@ -102,8 +102,8 @@ export class View extends Component {
         el2.classList.toggle("maximized")
         el3.classList.toggle("editorMaxH")
         this.state.icon === "arrows-alt" ?
-        this.setState({...state, icon: "compress-arrows-alt"}) :
-        this.setState({...state, icon: "arrows-alt"})
+            this.setState({...state, icon: "compress-arrows-alt"}) :
+            this.setState({...state, icon: "arrows-alt"})
     }
 
 
@@ -111,24 +111,18 @@ export class View extends Component {
         return (
             <div>
                 <div className="edDiv">
-                    <div className="toolbar">
-                        <div>
-                            <FontAwesomeIcon icon={['fab', 'free-code-camp']}  size="2x" className="frnt"/>
-                            <span id="edText">{this.state.text[0]}</span>
-                        </div>
-                        <FontAwesomeIcon icon={this.state.icon} onClick={this.handleClickEdit} size="2x" className="bck"/>
-                    </div>
+                    <EditToolbar text={this.state.text} 
+                                    icon={this.state.icon} 
+                                    handleClickEdit={this.handleClickEdit} />
+           
                     <textarea id="editor" value={this.state.markdown} onChange={this.handleChange} type="text"></textarea>
                 </div>
                 <div className="spacer"></div>
                 <div className="preDiv">
-                    <div className="toolbar">
-                        <div>
-                            <FontAwesomeIcon icon={['fab', 'free-code-camp']}  size="2x" className="frnt"/>
-                            <span id="prevText">{this.state.text[1]}</span>
-                        </div>
-                        <FontAwesomeIcon icon={this.state.icon} onClick={this.handleClickPrev} size="2x" className="bck" />
-                    </div>
+                    <PreviewToolbar text={this.state.text}
+                                    icon={this.state.icon}
+                                    handleClickPrev={this.handleClickPrev} />
+       
                     <div id="preview" dangerouslySetInnerHTML={{__html: marked(this.state.markdown, { renderer: renderer })}}></div>
                 </div>
             </div>
@@ -137,3 +131,28 @@ export class View extends Component {
 }
 
 export default View
+
+
+const EditToolbar = (props) => {
+    return (
+        <div className="toolbar">
+            <div>
+                <FontAwesomeIcon icon={['fab', 'free-code-camp']} size="2x" className="frnt" />
+                <span id="edText">{props.text[0]}</span>
+            </div>
+            <FontAwesomeIcon icon={props.icon} onClick={props.handleClickEdit} size="2x" className="bck" />
+        </div>
+    )
+}
+
+const PreviewToolbar = (props) => {
+    return (
+        <div className="toolbar">
+            <div>
+                <FontAwesomeIcon icon={['fab', 'free-code-camp']} size="2x" className="frnt" />
+                <span id="prevText">{props.text[1]}</span>
+            </div>
+            <FontAwesomeIcon icon={props.icon} onClick={props.handleClickPrev} size="2x" className="bck" />
+        </div >
+    )
+}
