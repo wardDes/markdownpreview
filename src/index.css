@@ -107,3 +107,54 @@ body {
 #bg {
     background-color: lightblue;
 }
+
+/* rules based on marked down ids */
+h1 {
+    padding-top:30px;
+}
+
+h2 {
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+p {
+    font-size: 20px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+
+blockquote {
+    padding-top: 20px;
+    border-left: 10px solid #224B4B;
+    background-color: #3e3e3e;
+    height: 125px;
+    color: #eee;
+}
+
+pre {
+    color: white;
+    background: black;
+    font-size: 20px;
+    height: 100px;
+}
+
+code {
+    padding: 10px;
+}
+
+ul {
+    margin-left: 20px;
+    background-color: white;
+}
+
+ul > li {
+    font-size: 16px;
+    margin: 0 0 20px 15px;;
+    color: black;
+}
+
+td {
+    font-size: 24px;
+    text-align: center;
+}
