@@ -12,52 +12,41 @@ library.add(fab, faCompressArrowsAlt, faArrowsAlt)
 const renderer = marked.renderer
 
 const placeholder = 
-`# Welcome to my React Markdown Previewer!
+`
+# My Online Markdown Previewer
 
-## This is a sub-heading...
-### And here's some other cool stuff:
-  
-Heres some code, \`<div></div>\`, between 2 backticks.
+---
+
+## Below are samples of markdown text.
+
+
+
+For more on Github's Flavored Markdown Spec click [here](https://github.github.com/gfm) "Github's Flavored Markdown Spec")
+
+Github Flavored Markdown Spec has **extensions** such as \`<table>\` 
+
+Markdown is great for making code snippets look good and readable:
 
 \`\`\`
-// this is multi-line code:
 
-function anotherExample(firstLine, lastLine) {
-  if (firstLine == '\`\`\`' && lastLine == '\`\`\`') {
-    return multiLineCode;
-  }
-}
+for (let index = 0; index < array.length; index++) {
+    const element = array[index];    
+ }
+ 
 \`\`\`
-  
-You can also make text **bold**... whoa!
-Or _italic_.
-Or... wait for it... **_both!_**
-And feel free to go crazy ~~crossing stuff out~~.
 
-There's also [links](https://www.freecodecamp.com), and
-> Block Quotes!
+Markdown makes it especially easy to make a list:
+- first item
+- second item
+- third item
 
-And if you want to get really crazy, even tables:
+> It must be noted that the GitHub markdown and the Common markdown 
+vary in indentation and use of spaces as far as where and what HTML is rendered.
 
-Wild Header | Crazy Header | Another Header?
------------- | ------------- | ------------- 
-Your content can | be here, and it | can be here....
-And here. | Okay. | I think we get it.
-
-- And of course there are lists.
-  - Some are bulleted.
-     - With different indentation levels.
-        - That look like this.
-
-
-1. And there are numbererd lists too.
-1. Use just 1s if you want! 
-1. But the list goes on...
-- Even if you use dashes or asterisks.
-* And last but not least, let's not forget embedded images:
-
-![React Logo w/ Text](logo512.png)
-## React Logo
+| |
+---
+|![React Logo w/ Text](logo512.png)|
+|React Logo|
 `
 
 export class View extends Component {
